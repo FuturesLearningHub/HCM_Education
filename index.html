@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HCM Essentials | Vanderbilt</title>
+<meta name="description" content="An interactive classroom experience for Vanderbilt's Business Unit HCMs: what the role owns, the core four responsibilities, the HR foundations behind every transaction, Oracle as home base, and the accountability model, ending in one committed working habit.">
+<link rel="canonical" href="https://me5231979.github.io/HCM_Education/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="HCM Essentials | Vanderbilt Learning Series">
+<meta property="og:description" content="Every entry is someone's paycheck. The HCM role, done right: timecards, transactions, terminations, and leave, on time and in Oracle, ending in one committed working habit.">
+<meta property="og:url" content="https://me5231979.github.io/HCM_Education/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HCM Essentials | Vanderbilt Learning Series">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="assets/img/favicon-96.png">
+<link rel="apple-touch-icon" href="assets/img/favicon-96.png">
+
+<link rel="preload" href="assets/fonts/libre-caslon-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="stylesheet" href="assets/css/styles.css?v=1">
+<style>
+  /* skill pills (course-level) */
+  .skills { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin-top: 1.5rem; }
+  .skills__label { font-family: var(--font-condensed); font-weight: 700; text-transform: uppercase;
+    letter-spacing: .08em; font-size: .7rem; color: var(--vu-gold-flat); margin-right: .25rem; }
+  .skillpill { display: inline-block; font-family: var(--font-condensed); font-weight: 700;
+    text-transform: uppercase; letter-spacing: .06em; font-size: .68rem; line-height: 1.3;
+    padding: .3rem .65rem; border-radius: 999px; border: 1px solid rgba(207,174,112,.55);
+    color: rgba(255,255,255,.85); }
+  .skillpill--core { background: var(--vu-gold-flat); border-color: var(--vu-gold-flat); color: var(--vu-black); }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#s-agenda">Skip to content</a>
+
+<!-- reading progress -->
+<div class="progress" aria-hidden="true"><div class="progress__bar" id="progressBar"></div></div>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav" id="nav">
+  <a class="nav__brand" href="#top" aria-label="Vanderbilt University, home">
+    <img class="nav__lockup" src="assets/img/vu-lockup-white.png" alt="Vanderbilt University" width="250" height="65">
+    <img class="nav__vicon" src="assets/img/vu-v-icon-nav.png" alt="Vanderbilt University" width="34" height="25">
+  </a>
+  <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+  <nav class="nav__links" id="navlinks" aria-label="Sections">
+    <a href="#s-role">The Role</a>
+    <a href="#s-core">The Core Four</a>
+    <a href="#s-foundations">Foundations</a>
+    <a href="#s-oracle">Oracle First</a>
+    <a class="btn" href="#s-recap">Take the Quiz</a>
+  </nav>
+</header>
+
+<!-- bottom navigation bar -->
+<div class="bottombar" role="group" aria-label="Presentation controls">
+  <span class="bottombar__title" id="barTitle"></span>
+  <div class="dots" id="dots" role="navigation" aria-label="Slide navigation"></div>
+  <div class="bottombar__ctrl">
+    <span class="bottombar__count" id="deckCount">1 / 13</span>
+    <button id="deckPrev" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
+    <button id="deckNext" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+  </div>
+</div>
+<button class="scrollhint" id="scrollHint" type="button" aria-label="Scroll for more on this screen">Scroll for more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="12" height="12" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+
+<main class="deck" id="top">
+
+  <!-- ============ 0 · WELCOME / QR ============ -->
+  <section class="slide on-dark welcome" id="s-welcome" data-title="Scan to join">
+    <div class="wrap" style="text-align:center">
+      <img src="assets/img/vu-v-icon.png" alt="Vanderbilt V" width="72" height="66" style="margin:0 auto 1.75rem;width:clamp(56px,6vw,80px);height:auto" data-reveal>
+      <p class="eyebrow" data-reveal>Vanderbilt · Learning Series</p>
+      <h1 class="h2" data-reveal style="max-width:22ch;margin-inline:auto">Welcome. Scan to bring this session <em class="gold-text">to your seat</em>.</h1>
+      <div class="qr-card" id="qrCard" data-reveal>
+        <div class="qr-card__code" id="qrBox" role="img" aria-label="QR code linking to this experience"></div>
+        <p class="qr-card__url" id="qrUrl"></p>
+      </div>
+      <p class="lead" data-reveal style="margin:1.5rem auto 0;max-width:46ch">Follow along on your own device. Today is about the role you already hold and the people who count on it. Bring your questions, and bring your war stories; both make the session better.</p>
+      <div class="hero__meta" data-reveal style="justify-content:center">
+        <div><b>5</b> Core sections</div>
+        <div><b>90</b> Minutes (60 core)</div>
+        <div><b>1</b> Working habit you'll commit to</div>
+      </div>
+      <div class="hero__cta" data-reveal style="justify-content:center">
+        <a class="btn" href="#s-hero">We're ready, let's begin</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 1 · HERO ============ -->
+  <section class="slide on-dark hero" id="s-hero" data-title="Objectives">
+    <canvas class="hero__canvas" aria-hidden="true"></canvas>
+    <div class="hero__scrim" aria-hidden="true"></div>
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>HCM Essentials · Vanderbilt</p>
+      <h1 class="h-hero" data-reveal>Every entry is<br><em class="gold-text">someone's paycheck.</em></h1>
+      <p class="lead" data-reveal style="margin-top:1.5rem">You are the HCM: the person whose actions carry every hire, timecard, transfer, termination, and leave in your unit into Oracle. When those actions land on time, nobody notices, and that is the point. This session is the standard for the role, built from the HCM Operational Excellence initiative, so the job runs on a playbook instead of memory.</p>
+      <div class="objectives" data-reveal>
+        <p class="objectives__label">By the end of this session, you will be able to</p>
+        <ol class="objectives__list">
+          <li>Describe where the HCM role sits between your business unit, PCB, and Oracle, and what it costs when actions slip</li>
+          <li>Execute the core four on time: timecard approvals, transactions, terminations, and leave actions</li>
+          <li>Explain the foundations behind the clicks: FLSA status, job architecture, and multi-state compliance</li>
+          <li>Locate answers in Oracle first: HCM Academy learning paths, job aids, and guided journeys, before email or a ticket</li>
+          <li>Commit to one working habit that prevents errors upstream instead of correcting them downstream</li>
+        </ol>
+      </div>
+      <div class="skills" data-reveal aria-label="Skills this course builds">
+        <span class="skills__label">Skills you'll build</span>
+        <span class="skillpill skillpill--core">Continuously strives for excellence</span>
+        <span class="skillpill skillpill--core">Makes effective and ethical decisions for the University</span>
+        <span class="skillpill">Oracle HCM</span>
+        <span class="skillpill">Payroll Accuracy</span>
+        <span class="skillpill">HR Compliance</span>
+      </div>
+      <div class="hero__cta" data-reveal>
+        <a class="btn" href="#s-role">Begin the session</a>
+        <a class="btn btn--ghost" href="#s-recap">Jump to the quiz</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 2 · AGENDA ============ -->
+  <section class="slide on-cream" id="s-agenda" data-title="The plan">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>What we'll cover</p>
+      <h2 class="h2" data-reveal>Five sections, one <em>cycle</em>.</h2>
+      <ol class="agenda">
+        <li data-reveal><span class="num">01</span><div><h3>The role and the stakes</h3><p>What an HCM actually owns, and the real cost when actions land late or wrong.</p></div></li>
+        <li data-reveal><span class="num">02</span><div><h3>The core four</h3><p>Timecards, transactions, terminations, and leave: the moves that keep pay correct.</p></div></li>
+        <li data-reveal><span class="num">03</span><div><h3>The foundations</h3><p>FLSA, job architecture, and why new states raise the stakes on getting it right.</p></div></li>
+        <li data-reveal><span class="num">04</span><div><h3>Oracle first</h3><p>The HCM Academy, job aids, guided journeys, and where every answer now lives.</p></div></li>
+        <li data-reveal><span class="num">05</span><div><h3>Accountability and community</h3><p>Reminders, escalations, dashboards, and the support system built around the role.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ 3 · 01 THE ROLE AND THE STAKES ============ -->
+  <section class="slide on-light" id="s-role" data-count data-title="The role and the stakes">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Section 01 · The Role</p>
+      <h2 class="h2" data-reveal>The role nobody notices, until it <em>slips</em>.</h2>
+      <p class="lead" data-reveal>HCM stands for Human Capital Management, and at Vanderbilt it is also a person: you, the specialist in each business unit who carries people actions into Oracle and works alongside PCB (People, Culture and Belonging) and the HRIS team. Until now the role has run without a standard: no checklist, no shared job description, training scattered across emails and webinars. The result is help desk volume, back and forth, and preventable pay errors. That is what the HCM Operational Excellence initiative is fixing, starting with this session.</p>
+
+      <div class="card" data-reveal style="margin-top:2rem;border-color:rgba(236,183,72,.4)">
+        <span class="tag">A five-month window</span>
+        <p style="margin:.5rem 0 0" class="measure">Between January and May 2026, the initiative charter documents 24 overpayment cases in Engineering and the School of Medicine alone, totaling about $84,000. Most traced back to delayed or incorrect HCM and manager actions. Every one of them became a recovery conversation with a real person about money they may have already spent.</p>
+      </div>
+
+      <div class="quiz" id="numGuess" data-reveal style="margin-top:2.5rem">
+        <p class="eyebrow" style="margin-bottom:.5rem">Play · Guess the number</p>
+        <p class="why" style="margin-top:0"><b>Why this matters:</b> a number you guessed at, and missed, sticks far better than one you were shown. Four facts from the initiative charter; call each one before it's revealed.</p>
+        <p class="quiz__progress" id="ngProgress"></p>
+        <p class="quiz__q" id="ngQ" style="margin-top:.4rem"></p>
+        <div class="quiz__options" id="ngOptions" role="group" aria-label="Number choices"></div>
+        <p class="quiz__feedback" id="ngFeedback" aria-live="polite"></p>
+        <div class="quiz__nav">
+          <button class="btn btn--dark" id="ngNext" style="visibility:hidden">Next fact</button>
+        </div>
+        <div id="ngResult" hidden aria-live="polite"></div>
+      </div>
+
+      <div class="quiz" data-quiz data-reveal style="margin-top:2.5rem">
+        <p class="quiz__q">Quick check: Where is an HCM error cheapest to catch?</p>
+        <div class="quiz__options">
+          <button class="opt" data-correct="1" data-why="Upstream, before it enters Oracle. Once a bad or late entry reaches payroll, fixing it takes reviews, corrections, and sometimes a recovery conversation with the employee."><span class="mark">A</span><span>Before it enters Oracle</span></button>
+          <button class="opt" data-correct="0" data-why="Downstream review catches some errors, but by then the fix costs multiple people's time, and some errors still reach a paycheck."><span class="mark">B</span><span>During a downstream review</span></button>
+          <button class="opt" data-correct="0" data-why="After payroll runs, the error IS the paycheck. Recovery is the most expensive and most painful fix there is."><span class="mark">C</span><span>After payroll, via recovery</span></button>
+        </div>
+        <p class="quiz__feedback" aria-live="polite"></p>
+      </div>
+
+      <details class="deeper" data-reveal>
+        <summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg> Go deeper</summary>
+        <div class="deeper__body">
+          <div><h4>In practice</h4><p>The initiative's core idea is moving quality upstream. Instead of relying on downstream reviews and help desk intervention, every recurring issue gets sorted into one of four fixes: training when people lack the knowledge, a system guardrail when Oracle can block an invalid entry before it saves, a guided workflow when instructions belong at the point of work, and an automated notification when a timely reminder would have prevented the delay. Today covers your half of that bargain: the knowledge and the habits. Oracle is being built to cover the rest.</p></div>
+          <div class="deeper__ask"><h4><span class="mode">As a group</span> · 4 min</h4>
+          <p class="why"><b>Why this matters:</b> the stakes get real when they're your unit's stakes, in your unit's words.</p>
+          <ol class="steps">
+            <li>In pairs: name the two HCM tasks most likely to slip in your unit, and why. Volume? Unclear process? Waiting on a manager?</li>
+            <li>Call a few out to the room and sort them out loud: knowledge problem, or timing problem?</li>
+            <li>Notice the pattern most rooms find: it's mostly timing. That is good news, because timing is a habit, and habits are trainable.</li>
+          </ol>
+          <p class="why" style="margin-top:.6rem"><b>Flying solo?</b> Write down the two tasks that slip most for you, and honestly mark each one: knowledge, or timing. Your capstone will aim a habit at exactly that spot.</p></div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ 4 · MANIFESTO ============ -->
+  <section class="slide on-cream manifesto" id="s-belief" data-title="One idea">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>The core idea</p>
+      <p>Behind every transaction is a person waiting on a paycheck.</p>
+    </div>
+  </section>
+
+  <!-- ============ 5 · 02 THE CORE FOUR ============ -->
+  <section class="slide on-dark" id="s-core" data-count data-title="The core four">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Section 02 · The Core Four</p>
+      <h2 class="h2" data-reveal>The core <em>four</em>.</h2>
+      <p class="lead" data-reveal>Four responsibility areas produce most of the preventable errors, and all four are won or lost on timing. Master these and you have mastered most of the role.</p>
+
+      <div class="grid grid-3" style="margin-top:2.5rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+        <div class="card" data-reveal>
+          <span class="tag">1 · Timecards</span>
+          <h3>Approve on time</h3>
+          <p class="muted">Every cycle, every deadline. An unapproved timecard delays or distorts someone's pay, and a rubber-stamped one hides overtime that must legally be paid. Review, then approve, before the cutoff.</p>
+        </div>
+        <div class="card" data-reveal>
+          <span class="tag">2 · Transactions</span>
+          <h3>Submit when you know</h3>
+          <p class="muted">Hires, transfers, pay changes, assignment updates. The day you learn about a change is the day it goes into Oracle, with the true effective date, even if that date is later.</p>
+        </div>
+        <div class="card" data-reveal>
+          <span class="tag">3 · Terminations</span>
+          <h3>Process promptly</h3>
+          <p class="muted">The classic overpayment is a termination entered after payroll already ran. Right date, entered the day you learn it, no waiting for it to feel official.</p>
+        </div>
+        <div class="card" data-reveal>
+          <span class="tag">4 · Leave</span>
+          <h3>Route it properly</h3>
+          <p class="muted">Leave handled informally becomes wrong pay and compliance exposure. Get leave actions into the proper process early so pay, protections, and timecards line up from day one.</p>
+        </div>
+      </div>
+
+      <div class="quiz" id="playCall" data-reveal style="margin-top:2.5rem">
+        <p class="eyebrow" style="margin-bottom:.5rem">Play · Call the play</p>
+        <p class="why" style="margin-top:0"><b>Why this matters:</b> the core four are easy to recite and easy to fumble under real conditions. Five real-week scenarios; call the right move for each.</p>
+        <p class="quiz__progress" id="pcProgress"></p>
+        <p class="quiz__q" id="pcQ" style="margin-top:.4rem"></p>
+        <div class="quiz__options" id="pcOptions" role="group" aria-label="Play choices"></div>
+        <p class="quiz__feedback" id="pcFeedback" aria-live="polite"></p>
+        <div class="quiz__nav">
+          <button class="btn" id="pcNext" style="visibility:hidden">Next scenario</button>
+        </div>
+        <div id="pcResult" hidden aria-live="polite"></div>
+      </div>
+
+      <div class="card" data-reveal style="margin-top:2rem;border-color:rgba(207,174,112,.5)">
+        <span class="tag">The one habit</span>
+        <p style="margin:.5rem 0 0;color:rgba(255,255,255,.85)">Same day, into Oracle. If you learned about it today, it is in Oracle today, carrying its true effective date. A sticky note is not a system of record, and payroll cannot pay from your inbox.</p>
+      </div>
+
+      <details class="deeper" data-reveal>
+        <summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg> Go deeper</summary>
+        <div class="deeper__body">
+          <div><h4>In practice</h4><p>Why timing beats memory: payroll runs on cutoffs, and anything that misses the cutoff either pays wrong or pays late. A change you hold until it "feels confirmed" usually crosses a cutoff while it waits. Overpayments are the worst version: the university has to recover money from an employee who may have already spent it, and underpayments hurt the person immediately. Same-day entry with the correct effective date lets Oracle and payroll handle the timing correctly; that is what effective dates are for.</p></div>
+          <div class="deeper__ask"><h4><span class="mode">As a group</span> · 5 min</h4>
+          <p class="why"><b>Why this matters:</b> most missed deadlines were never written anywhere the HCM actually looks.</p>
+          <ol class="steps">
+            <li>Everyone writes their unit's payroll cutoffs and timecard approval deadlines from memory. No peeking.</li>
+            <li>Compare with a neighbor, then check against the real calendar. Score yourselves honestly.</li>
+            <li>Anyone who missed one: put the real dates on your work calendar as recurring reminders, right now, before the next slide.</li>
+          </ol>
+          <p class="why" style="margin-top:.6rem"><b>Flying solo?</b> Look up your payroll cutoff calendar now and add recurring reminders for every approval deadline. Two minutes of calendar work prevents most of the $84,000 problem.</p></div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ 6 · 03 THE FOUNDATIONS ============ -->
+  <section class="slide on-light" id="s-foundations" data-count data-title="The foundations">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Section 03 · Foundations</p>
+      <h2 class="h2" data-reveal>The concepts behind the <em>clicks</em>.</h2>
+      <p class="lead" data-reveal>You do not need to be an employment lawyer to be a great HCM. You need to recognize when a routine-looking request touches one of three foundations, because that recognition is what tells you to slow down and verify before you click submit.</p>
+
+      <div class="grid grid-3" style="margin-top:2.5rem">
+        <div class="card" data-reveal>
+          <span class="tag">FLSA status</span>
+          <h3>Exempt or non-exempt</h3>
+          <p class="muted">The federal Fair Labor Standards Act sorts every job into exempt or non-exempt. Non-exempt employees track their hours and earn overtime when they work it; that is a legal right, so their timecards must reflect reality. Exempt status is a legal test about duties and salary, never a convenience setting.</p>
+        </div>
+        <div class="card" data-reveal>
+          <span class="tag">Job architecture</span>
+          <h3>The right box matters</h3>
+          <p class="muted">Job families, levels, titles, and pay ranges form one standardized structure. Choosing the right job profile drives pay, FLSA status, and career paths. A custom title with a pay rate that "feels right" today becomes a classification and equity problem tomorrow.</p>
+        </div>
+        <div class="card" data-reveal>
+          <span class="tag">Multi-state compliance</span>
+          <h3>New states, new rules</h3>
+          <p class="muted">Vanderbilt is expanding operations into New York, California, and Florida, and each state adds its own wage, hour, leave, and final-pay rules. Some states require a departing employee's final paycheck within days. When someone works from a new state, flag it early and verify.</p>
+        </div>
+      </div>
+
+      <div class="quiz" id="conceptSpot" data-reveal style="margin-top:2.5rem">
+        <p class="eyebrow" style="margin-bottom:.5rem">Play · Spot the concept</p>
+        <p class="why" style="margin-top:0"><b>Why this matters:</b> these foundations never announce themselves; they arrive dressed as ordinary requests. Five requests; name the foundation each one touches.</p>
+        <p class="quiz__progress" id="csProgress"></p>
+        <p class="quiz__q" id="csQ" style="margin-top:.4rem"></p>
+        <div class="quiz__options" id="csOptions" role="group" aria-label="Concept choices"></div>
+        <p class="quiz__feedback" id="csFeedback" aria-live="polite"></p>
+        <div class="quiz__nav">
+          <button class="btn btn--dark" id="csNext" style="visibility:hidden">Next request</button>
+        </div>
+        <div id="csResult" hidden aria-live="polite"></div>
+      </div>
+
+      <details class="deeper" data-reveal>
+        <summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg> Go deeper</summary>
+        <div class="deeper__body">
+          <div><h4>In practice</h4><p>The move is recognize and route, never diagnose alone. If a request touches FLSA status, classification, or a new work state, your job is to flag it to PCB's specialists before processing, with the details you already gathered. The authoritative primer on FLSA basics lives at the <a href="https://www.dol.gov/agencies/whd/flsa" target="_blank" rel="noopener" style="text-decoration:underline">U.S. Department of Labor</a>, and the HCM Academy's foundations content covers Vanderbilt's specific rules. What you never do is guess: a wrong guess here compounds quietly for months and surfaces as back pay, penalties, or an audit finding.</p></div>
+          <div class="deeper__ask"><h4><span class="mode">As a group</span> · 4 min</h4>
+          <p class="why"><b>Why this matters:</b> the dangerous requests are the polite ones. Practicing the flag-it reply makes it easy to say in the moment.</p>
+          <ol class="steps">
+            <li>In pairs, one partner plays a manager asking: "Can we just make this role salaried so we can stop dealing with timecards?"</li>
+            <li>The other practices the reply: yes to helping, and routing the classification question to PCB before anything changes.</li>
+            <li>Swap, with a new request: "She's moving to California next month, nothing changes, right?" Practice flagging it early.</li>
+          </ol>
+          <p class="why" style="margin-top:.6rem"><b>Flying solo?</b> Draft your own one-line flag-it reply and keep it: helpful in tone, firm on routing, no diagnosis on the spot.</p></div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ 7 · 04 ORACLE FIRST ============ -->
+  <section class="slide on-dark" id="s-oracle" data-count data-title="Oracle first">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Section 04 · Oracle First</p>
+      <h2 class="h2" data-reveal>Oracle <em>first</em>.</h2>
+      <p class="lead" data-reveal>The initiative establishes Oracle as the single source of truth for HCM training, procedures, job aids, and guidance. The scattered version of this knowledge (email threads, old webinars, that one person who knows) is being retired. What replaces it is built around how you actually work.</p>
+
+      <div class="grid grid-3" style="margin-top:2.5rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+        <div class="card" data-reveal>
+          <span class="tag">HCM Academy</span>
+          <h3>Your learning path</h3>
+          <p class="muted">Role-based learning paths built for what you actually process, organized by role type (staff, faculty, student) and transaction. Required courses are assigned, tracked, and certified, with completion visible to you and your manager.</p>
+        </div>
+        <div class="card" data-reveal>
+          <span class="tag">Job aids &amp; journeys</span>
+          <h3>Help at the point of work</h3>
+          <p class="muted">Step-by-step job aids and Oracle guided journeys sit inside the flow of the transaction, so the answer to "how do I do this" appears where and when you need it, kept current under formal governance.</p>
+        </div>
+        <div class="card" data-reveal>
+          <span class="tag">Guardrails &amp; alerts</span>
+          <h3>The system helps you</h3>
+          <p class="muted">Configurable guardrails validate entries and block invalid submissions before they save. Automated reminders surface what is due before it is overdue. The system is being built to catch what memory misses.</p>
+        </div>
+      </div>
+
+      <div class="quiz" id="goFirst" data-reveal style="margin-top:2.5rem">
+        <p class="eyebrow" style="margin-bottom:.5rem">Play · Where do you go first?</p>
+        <p class="why" style="margin-top:0"><b>Why this matters:</b> every question routed correctly is a faster answer for you and a clearer help desk queue for everyone. Five moments; pick the first stop for each.</p>
+        <p class="quiz__progress" id="gfProgress"></p>
+        <p class="quiz__q" id="gfQ" style="margin-top:.4rem"></p>
+        <div class="quiz__options" id="gfOptions" role="group" aria-label="First stop choices"></div>
+        <p class="quiz__feedback" id="gfFeedback" aria-live="polite"></p>
+        <div class="quiz__nav">
+          <button class="btn" id="gfNext" style="visibility:hidden">Next moment</button>
+        </div>
+        <div id="gfResult" hidden aria-live="polite"></div>
+      </div>
+
+      <div class="quiz" data-quiz data-reveal style="margin-top:2.5rem">
+        <p class="quiz__q">Quick check: Going forward, the single source of truth for HCM procedures, training, and job aids is…</p>
+        <div class="quiz__options">
+          <button class="opt" data-correct="1" data-why="Oracle, through the HCM Academy and its job aids and journeys. One place, governed and kept current, instead of scattered emails and memory."><span class="mark">A</span><span>Oracle and the HCM Academy</span></button>
+          <button class="opt" data-correct="0" data-why="Email threads are exactly the disconnected knowledge-sharing the initiative is retiring. If the answer matters, it lives in Oracle."><span class="mark">B</span><span>The email thread where it was explained once</span></button>
+          <button class="opt" data-correct="0" data-why="Veteran colleagues are gold, but a person is not a system of record. When they retire, the knowledge must not retire with them."><span class="mark">C</span><span>The colleague who has done it for years</span></button>
+        </div>
+        <p class="quiz__feedback" aria-live="polite"></p>
+      </div>
+
+      <details class="deeper" data-reveal>
+        <summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg> Go deeper</summary>
+        <div class="deeper__body">
+          <div><h4>In practice</h4><p>The Oracle-first habit has a virtuous loop attached. Every job aid you use instead of opening a ticket keeps the help desk queue for genuine problems, which means faster help when you hit one. And when a job aid is missing or confusing, saying so through the feedback channel is real work: the Academy's content is governed, reviewed, and updated on a defined cadence, and your report is what triggers the fix for every HCM after you. Academy content also tells you why each requirement matters, so training connects to the errors it prevents.</p></div>
+          <div class="deeper__ask"><h4><span class="mode">As a group</span> · 4 min</h4>
+          <p class="why"><b>Why this matters:</b> the initiative is actively deciding where to build guardrails, and the people in this room know exactly where they belong.</p>
+          <ol class="steps">
+            <li>In pairs: name one HCM task where Oracle should simply stop a bad entry before it saves. Be specific about what it should block.</li>
+            <li>Share the best candidates with the room and collect them; real guardrail requests come from exactly this exercise.</li>
+            <li>Notice the shift: from working around the system to shaping it.</li>
+          </ol>
+          <p class="why" style="margin-top:.6rem"><b>Flying solo?</b> Write down the one entry mistake you'd most like Oracle to make impossible, and submit it through the feedback channel this week.</p></div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ 8 · 05 ACCOUNTABILITY AND COMMUNITY ============ -->
+  <section class="slide on-cream" id="s-account" data-count data-title="Accountability and community">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Section 05 · Accountability &amp; Community</p>
+      <h2 class="h2" data-reveal>Accountability, with <em>backup</em>.</h2>
+      <p class="lead" data-reveal>The initiative pairs clearer expectations with real support. Expectations first: required training completed above 85 percent within its timeframes, transactions and approvals done by their deadlines, and overdue items that no longer disappear quietly. Reminders come first; what stays overdue escalates, and timeliness is visible on dashboards leadership actually looks at.</p>
+
+      <div class="quiz" data-quiz data-reveal style="margin-top:2rem">
+        <p class="quiz__q">Quick check: You get an overdue reminder for a timecard approval and let it sit. In the new model, what happens next?</p>
+        <div class="quiz__options">
+          <button class="opt" data-correct="0" data-why="Reminders used to be advisory. Now the quiet route is closed: overdue items escalate, and the dashboard shows the pattern either way."><span class="mark">A</span><span>Nothing; reminders are advisory</span></button>
+          <button class="opt" data-correct="1" data-why="It escalates, and overdue items are visible on dashboards. The design goal is simple: make on-time the easiest path, and make silence impossible."><span class="mark">B</span><span>It escalates, and the overdue item is visible on a dashboard</span></button>
+          <button class="opt" data-correct="0" data-why="The help desk does not absorb overdue approvals. Accountability for the action stays with the role that owns it."><span class="mark">C</span><span>The help desk approves it for you</span></button>
+        </div>
+        <p class="quiz__feedback" aria-live="polite"></p>
+      </div>
+
+      <p class="lead" data-reveal style="margin-top:2rem">Now the support side, because accountability without backup is just pressure. The same initiative delivers the things HCMs have asked for:</p>
+
+      <div class="grid grid-3" style="margin-top:1.5rem">
+        <div class="card" data-reveal>
+          <span class="tag">A defined role</span>
+          <h3>Checklist &amp; job description</h3>
+          <p class="muted">For the first time, a standardized HCM checklist and job description. Managers know what to hire for, you know exactly what the role expects, and "I didn't know that was mine" retires.</p>
+        </div>
+        <div class="card" data-reveal>
+          <span class="tag">A community</span>
+          <h3>HCMs, together</h3>
+          <p class="muted">A real HCM community: a place to ask practice questions, share approaches, and raise ideas, with ongoing feedback channels into the Academy. HCMs asked for a forum; this is it.</p>
+        </div>
+        <div class="card" data-reveal>
+          <span class="tag">A voice</span>
+          <h3>Surveys &amp; champions</h3>
+          <p class="muted">The HCM surveys collect pain points and training needs, and a champion network of your peers supports the rollout. What you flag shapes what gets built next.</p>
+        </div>
+      </div>
+
+      <div class="quiz" data-quiz data-reveal style="margin-top:2rem">
+        <p class="quiz__q">Quick check: You keep hitting the same confusing process, and half your unit hits it too. The move that actually fixes it is…</p>
+        <div class="quiz__options">
+          <button class="opt" data-correct="1" data-why="Flag it through the survey, the community, or the feedback channel. The initiative sorts every recurring issue into training, a guardrail, a guided workflow, or a notification, and flagged issues are the input."><span class="mark">A</span><span>Flag it through the survey or community so it gets a permanent fix</span></button>
+          <button class="opt" data-correct="0" data-why="A personal workaround saves you and strands everyone else, and it dies when you take a vacation."><span class="mark">B</span><span>Build a personal workaround and move on</span></button>
+          <button class="opt" data-correct="0" data-why="Venting is fair, but it fixes nothing. The feedback channels exist so frustration becomes a work item."><span class="mark">C</span><span>Vent about it at lunch</span></button>
+        </div>
+        <p class="quiz__feedback" aria-live="polite"></p>
+      </div>
+
+      <details class="deeper" data-reveal>
+        <summary><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg> Go deeper</summary>
+        <div class="deeper__body">
+          <div><h4>In practice</h4><p>How success gets measured, so you know the game being played: adoption of the Academy as the primary source, required training completion above 85 percent within timeframes, a measurable reduction in preventable help desk tickets and payroll errors, and improved timeliness of timecards, approvals, and personnel actions. None of these is a gotcha metric; all of them fall out naturally when the room runs the core four on time and goes Oracle first. The dashboard is meant to make good work visible, and it will.</p></div>
+          <div class="deeper__ask"><h4><span class="mode">As a group</span> · 4 min</h4>
+          <p class="why"><b>Why this matters:</b> the HCM survey is open input to the initiative, and a specific answer beats a vague one.</p>
+          <ol class="steps">
+            <li>Solo, two minutes: draft one line of survey feedback. Name the most confusing process in your unit and which fix it needs: training, a guardrail, a guided workflow, or a notification.</li>
+            <li>Read a few aloud. The room votes: right fix, or would a different one land better?</li>
+            <li>Keep your line; submitting it is part of the capstone's follow-through.</li>
+          </ol>
+          <p class="why" style="margin-top:.6rem"><b>Flying solo?</b> Draft the same one-liner and submit it through the survey or feedback channel this week. Specific beats vague.</p></div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ 9 · RECAP QUIZ ============ -->
+  <section class="slide on-light" id="s-recap" data-title="Recap quiz">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Check your understanding</p>
+      <h2 class="h2" data-reveal style="margin-bottom:2rem">The <em>recap</em>.</h2>
+      <div class="quiz" id="recap" data-reveal>
+        <div id="recapPanel">
+          <p class="quiz__progress" id="recapProgress"></p>
+          <p class="quiz__q" id="recapQ" style="margin-top:.5rem"></p>
+          <div class="quiz__options" id="recapOptions" role="group" aria-label="Answer choices"></div>
+          <p class="quiz__feedback" id="recapFeedback" aria-live="polite"></p>
+          <div class="quiz__nav">
+            <button class="btn btn--dark" id="recapNext" style="visibility:hidden">Next question</button>
+          </div>
+        </div>
+        <div id="recapResult" hidden aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 10 · HCM COMMITMENT CARD (capstone) ============ -->
+  <section class="slide on-dark" id="s-plan" data-title="My commitment card">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal>Capstone · HCM commitment card</p>
+      <h2 class="h2" data-reveal>One task. One habit. <em>One date.</em></h2>
+      <p class="lead" data-reveal>Sessions do not prevent overpayments; working habits do. Name the task that slips most in your world, pick the one habit from today you'll run against it, and put a date on the first rep.</p>
+      <p class="why" data-reveal><b>Why this matters:</b> a named habit aimed at a named task with a date attached is a change in how the role runs; everything less is a good intention. Nothing you type here is saved or sent anywhere.</p>
+
+      <div class="plan" id="hcmPlan" data-reveal>
+        <div class="plan__form">
+          <div class="plan__field">
+            <label for="planWho"><b>1 · The task that slips.</b> Which recurring HCM task slips most in your unit, and when does it bite?</label>
+            <input type="text" id="planWho" maxlength="140" placeholder="e.g. timecard approvals sit unapproved until the deadline morning" autocomplete="off">
+          </div>
+          <div class="plan__field">
+            <span class="plan__label"><b>2 · Your habit.</b> The one move you'll bring to it.</span>
+            <div class="plan__chips" id="planPractice" role="group" aria-label="HCM habit">
+              <button class="opt" data-practice="sameday"><span>Same day, into Oracle</span></button>
+              <button class="opt" data-practice="sweep"><span>A standing weekly deadline sweep</span></button>
+              <button class="opt" data-practice="oraclefirst"><span>Oracle first, before email or tickets</span></button>
+              <button class="opt" data-practice="learning"><span>Finish my assigned learning path</span></button>
+            </div>
+          </div>
+          <div class="plan__field">
+            <span class="plan__label"><b>3 · What you will NOT do.</b> Your honest failure mode.</span>
+            <div class="plan__chips" id="planNot" role="group" aria-label="Failure mode to avoid">
+              <button class="opt" data-not="sit"><span>Sit on changes until payroll week</span></button>
+              <button class="opt" data-not="ticket"><span>Open a ticket before checking Oracle</span></button>
+              <button class="opt" data-not="snooze"><span>Snooze reminders until they escalate</span></button>
+            </div>
+          </div>
+          <div class="plan__field">
+            <span class="plan__label"><b>4 · When is the first rep?</b></span>
+            <div class="plan__chips" id="planWhen" role="group" aria-label="Commitment window">
+              <button class="opt" data-when="tomorrow"><span>Tomorrow</span></button>
+              <button class="opt" data-when="cutoff"><span>Before the next payroll cutoff</span></button>
+              <button class="opt" data-when="week"><span>Within 7 days</span></button>
+            </div>
+          </div>
+          <div class="lab__runrow">
+            <button class="btn" id="planBuild" disabled>Build my commitment card</button>
+            <span class="quiz__progress" id="planStatus">Fill in all four parts</span>
+          </div>
+        </div>
+        <div class="lab__outcome" id="planOut" hidden aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 11 · GLOSSARY ============ -->
+  <section class="slide on-cream" id="s-glossary" data-title="Glossary">
+    <div class="wrap wrap-wide">
+      <p class="eyebrow" data-reveal>Reference · Flip to reveal</p>
+      <h2 class="h2" data-reveal style="margin-bottom:2rem">The <em>vocabulary</em>.</h2>
+      <div class="glossary">
+        <button class="flip" data-reveal aria-label="H C M, flip for definition"><div class="flip__inner"><div class="flip__face flip__front"><span class="hint">Term</span><h3>HCM</h3></div><div class="flip__face flip__back"><span class="hint">Definition</span><p>Human Capital Management. Both the Oracle system domain and the Vanderbilt role: the business unit specialist whose actions carry people transactions into Oracle.</p></div></div></button>
+        <button class="flip" data-reveal aria-label="P C B, flip for definition"><div class="flip__inner"><div class="flip__face flip__front"><span class="hint">Term</span><h3>PCB</h3></div><div class="flip__face flip__back"><span class="hint">Definition</span><p>People, Culture and Belonging: Vanderbilt's central HR organization. Your partner for classification, leave, compensation, and everything you flag instead of guessing.</p></div></div></button>
+        <button class="flip" data-reveal aria-label="H R I S, flip for definition"><div class="flip__inner"><div class="flip__face flip__front"><span class="hint">Term</span><h3>HRIS</h3></div><div class="flip__face flip__back"><span class="hint">Definition</span><p>Human Resources Information Systems: the team that runs and configures Oracle HCM, including the guardrails, journeys, and learning paths this initiative builds.</p></div></div></button>
+        <button class="flip" data-reveal aria-label="H C M Academy, flip for definition"><div class="flip__inner"><div class="flip__face flip__front"><span class="hint">Term</span><h3>HCM Academy</h3></div><div class="flip__face flip__back"><span class="hint">Definition</span><p>The role-based training program inside Oracle: learning paths by role type and transaction, required courses tracked to completion, content governed and kept current.</p></div></div></button>
+        <button class="flip" data-reveal aria-label="The core four, flip for definition"><div class="flip__inner"><div class="flip__face flip__front"><span class="hint">Term</span><h3>The Core Four</h3></div><div class="flip__face flip__back"><span class="hint">Definition</span><p>Timecard approvals, transactions, terminations, and leave actions: the four responsibility areas that produce most preventable errors, all won or lost on timing.</p></div></div></button>
+        <button class="flip" data-reveal aria-label="F L S A, flip for definition"><div class="flip__inner"><div class="flip__face flip__front"><span class="hint">Term</span><h3>FLSA</h3></div><div class="flip__face flip__back"><span class="hint">Definition</span><p>The federal Fair Labor Standards Act: minimum wage, overtime, and recordkeeping rules. The reason timecard accuracy is a legal matter and never just paperwork.</p></div></div></button>
+        <button class="flip" data-reveal aria-label="Exempt versus non exempt, flip for definition"><div class="flip__inner"><div class="flip__face flip__front"><span class="hint">Term</span><h3>Exempt / Non-exempt</h3></div><div class="flip__face flip__back"><span class="hint">Definition</span><p>The two FLSA classifications. Non-exempt employees track hours and earn overtime when they work it. The status comes from legal tests, never from convenience.</p></div></div></button>
+        <button class="flip" data-reveal aria-label="Job architecture, flip for definition"><div class="flip__inner"><div class="flip__face flip__front"><span class="hint">Term</span><h3>Job Architecture</h3></div><div class="flip__face flip__back"><span class="hint">Definition</span><p>The standardized structure of job families, levels, titles, and pay ranges. Picking the right profile drives pay, classification, and equity across units.</p></div></div></button>
+        <button class="flip" data-reveal aria-label="Payroll cutoff, flip for definition"><div class="flip__inner"><div class="flip__face flip__front"><span class="hint">Term</span><h3>Payroll Cutoff</h3></div><div class="flip__face flip__back"><span class="hint">Definition</span><p>The deadline after which a pay cycle locks. Anything submitted late pays wrong or pays late. The core four are scheduled around it; so should your reminders be.</p></div></div></button>
+        <button class="flip" data-reveal aria-label="Overpayment, flip for definition"><div class="flip__inner"><div class="flip__face flip__front"><span class="hint">Term</span><h3>Overpayment</h3></div><div class="flip__face flip__back"><span class="hint">Definition</span><p>Pay issued that should not have been, most often from a late termination or change. Recovery means asking a real person for money back; prevention means same-day entry.</p></div></div></button>
+        <button class="flip" data-reveal aria-label="Guardrail, flip for definition"><div class="flip__inner"><div class="flip__face flip__front"><span class="hint">Term</span><h3>Guardrail</h3></div><div class="flip__face flip__back"><span class="hint">Definition</span><p>An Oracle configuration that blocks invalid entries, enforces required fields, or requires approval before a transaction proceeds. Quality moved upstream, into the system.</p></div></div></button>
+        <button class="flip" data-reveal aria-label="Guided journey, flip for definition"><div class="flip__inner"><div class="flip__face flip__front"><span class="hint">Term</span><h3>Guided Journey</h3></div><div class="flip__face flip__back"><span class="hint">Definition</span><p>Oracle's embedded step-by-step guidance inside a transaction: instructions, job aids, and context delivered at the point of work, right when you need them.</p></div></div></button>
+        <button class="flip" data-reveal aria-label="Escalation, flip for definition"><div class="flip__inner"><div class="flip__face flip__front"><span class="hint">Term</span><h3>Escalation</h3></div><div class="flip__face flip__back"><span class="hint">Definition</span><p>What happens when a reminder is ignored: the overdue item moves up the chain and onto dashboards. Designed to make silence impossible, and easy to avoid by acting on the first reminder.</p></div></div></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 12 · CLOSING ============ -->
+  <section class="slide on-dark" id="s-close" data-title="Wrap-up">
+    <div class="wrap" style="text-align:center">
+      <img src="assets/img/vu-centered-white.png" alt="Vanderbilt University" width="120" height="125" style="margin:0 auto 2rem;width:clamp(96px,10vw,130px);height:auto" data-reveal>
+      <h2 class="h2 gold-text" data-reveal style="max-width:20ch;margin-inline:auto">Now run the <em>cycle</em>.</h2>
+      <p class="lead" data-reveal style="margin:1.25rem auto 0;color:rgba(255,255,255,.82)">You know what the role owns, the four moves that keep pay correct, the foundations that tell you when to slow down, where every answer now lives, and the accountability model around it all. One payroll cycle is about to run cleaner.</p>
+      <div class="vidcard vidcard--feature" data-reveal style="text-align:left;max-width:680px;margin:2.25rem auto 0;cursor:default">
+        <div class="vidcard__top"><span class="vidcard__src">Your one next step · This cycle</span><span class="vidcard__dur">Before the next cutoff</span></div>
+        <h3>The first rep of the habit you committed to</h3>
+        <p>Run your habit once for real: the same-day entry, the standing sweep, the Oracle-first lookup, or the next course in your path. Afterward, write one line about what did not become a fire drill; that line is your evidence. And submit the survey feedback you drafted; that is how the Academy gets better for every HCM after you.</p>
+      </div>
+      <p class="why" data-reveal style="margin:1.5rem auto 0;max-width:52ch;text-align:center"><b>Before you go:</b> say your habit and your date out loud, or type it in the chat. Spoken commitments stick.</p>
+      <div class="hero__cta" data-reveal style="justify-content:center;margin-top:1.75rem">
+        <a class="btn" href="checklist.html" target="_blank" rel="noopener">Take the HCM checklist</a>
+        <a class="btn btn--ghost" href="worksheet.html" target="_blank" rel="noopener">Print the commitment card</a>
+        <a class="btn btn--ghost" href="#s-recap">Retake the quiz</a>
+      </div>
+    </div>
+  <!-- ============ FOOTER ============ -->
+<footer class="footer" aria-labelledby="footHead">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <img src="assets/img/vu-lockup-white.png" alt="Vanderbilt University" width="300" height="78" style="width:min(300px,80%);height:auto">
+        <p class="brandline" id="footHead">On time. In Oracle. Every cycle.</p>
+      </div>
+      <div>
+        <h4>Sections</h4>
+        <ul>
+          <li><a href="#s-role">The Role</a></li>
+          <li><a href="#s-core">The Core Four</a></li>
+          <li><a href="#s-foundations">Foundations</a></li>
+          <li><a href="#s-oracle">Oracle First</a></li>
+          <li><a href="#s-account">Accountability</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Keep Learning</h4>
+        <ul>
+          <li><a href="#s-glossary">Glossary</a></li>
+          <li><a href="#s-recap">Knowledge Check</a></li>
+          <li><a href="#s-plan">My Commitment Card</a></li>
+          <li><a href="#s-close">Your Next Step</a></li>
+          <li><a href="web/">Self-paced version</a></li>
+          <li><a href="https://me5231979.github.io/Course_Library/">Course Library</a></li>
+          <li><a href="#top">Start Over</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__legal">
+      <span>© <span id="year">2026</span> Vanderbilt University. For classroom and self-paced learning.</span>
+      <span>Questions? <a href="mailto:chart@vanderbilt.edu" style="color:rgba(255,255,255,.7);text-decoration:underline">chart@vanderbilt.edu</a><!-- [EDIT] program contact --> · HCM Essentials · A Vanderbilt learning experience</span>
+    </div>
+  </div>
+</footer>
+  </section>
+
+</main>
+
+
+
+<script src="assets/js/qrcode.js?v=1"></script>
+<script src="assets/js/main.js?v=1"></script>
+</body>
+</html>

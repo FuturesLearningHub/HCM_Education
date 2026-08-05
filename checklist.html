@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The HCM Checklist | Vanderbilt</title>
+<meta name="robots" content="noindex">
+<style>
+  @font-face { font-family: 'Libre Caslon Display'; font-style: normal; font-weight: 400;
+    src: url('assets/fonts/libre-caslon-display-latin-400-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Inter'; font-style: normal; font-weight: 400;
+    src: url('assets/fonts/inter-latin-400-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Inter'; font-style: normal; font-weight: 600;
+    src: url('assets/fonts/inter-latin-600-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Antonio'; font-style: normal; font-weight: 700;
+    src: url('assets/fonts/antonio-latin-700-normal.woff2') format('woff2'); }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Inter', Arial, sans-serif; color: #1C1C1C; background: #fff;
+    font-size: 13px; line-height: 1.45; }
+  .sheet { max-width: 820px; margin: 0 auto; padding: 28px 32px; }
+  header { display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    border-bottom: 2px solid #CFAE70; padding-bottom: 14px; margin-bottom: 18px; }
+  header img { width: 150px; }
+  h1 { font-family: 'Libre Caslon Display', 'Times New Roman', serif; font-weight: 400;
+    font-size: 26px; margin: 0; }
+  h1 em { font-style: italic; color: #946E24; }
+  .eyebrow { font-family: 'Antonio', Impact, sans-serif; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .08em; font-size: 10px; color: #946E24; margin: 0 0 6px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .box { border: 1px solid #E4E4E4; border-radius: 4px; padding: 12px 14px; break-inside: avoid; }
+  .box h2 { font-family: 'Antonio', Impact, sans-serif; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .06em; font-size: 12px; color: #946E24; margin: 0 0 8px; }
+  ol, ul { margin: 0; padding-left: 18px; }
+  ul.checks { list-style: none; padding-left: 0; }
+  ul.checks li { position: relative; padding-left: 20px; margin-bottom: 5px; }
+  ul.checks li::before { content: "\2610"; position: absolute; left: 0; color: #946E24; font-size: 14px; }
+  li { margin-bottom: 4px; }
+  b { font-weight: 600; }
+  .full { grid-column: 1 / -1; }
+  .prompt { font-family: 'Libre Caslon Display', serif; font-size: 13.5px; border-left: 2px solid #CFAE70;
+    padding-left: 10px; color: #333; }
+  footer { margin-top: 16px; border-top: 1px solid #E4E4E4; padding-top: 10px; font-size: 11px; color: #777;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  a { color: #946E24; }
+  .printbtn { position: fixed; right: 18px; top: 18px; background: #CFAE70; border: 0; border-radius: 4px;
+    padding: 9px 16px; font-family: Inter, Arial, sans-serif; font-weight: 600; font-size: 13px; cursor: pointer; }
+  @media print { .printbtn { display: none; } body { font-size: 11.5px; } .sheet { padding: 0; max-width: none; } }
+  @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<button class="printbtn" onclick="window.print()">Print / Save as PDF</button>
+<div class="sheet">
+  <header>
+    <div>
+      <p class="eyebrow">Vanderbilt · Learning Series · Keep this by your keyboard</p>
+      <h1>The HCM <em>checklist</em></h1>
+    </div>
+    <img src="assets/img/vu-lockup-black.png" alt="Vanderbilt University">
+  </header>
+
+  <div class="grid">
+    <div class="box">
+      <h2>Every payroll cycle, before the cutoff</h2>
+      <ul class="checks">
+        <li>All timecards in your unit reviewed and approved, with real hours (overtime included).</li>
+        <li>Pending transactions submitted: hires, transfers, pay changes, assignment updates.</li>
+        <li>Any termination you know about is in Oracle with the correct date.</li>
+        <li>Leave actions routed through the proper process, never handled informally.</li>
+        <li>Backup approver engaged for any manager who cannot act before the deadline.</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h2>The day you learn about a change</h2>
+      <ul class="checks">
+        <li>Enter it in Oracle the same day, carrying its true effective date.</li>
+        <li>Retroactive change? Submit now and flag the real start date; never re-date it.</li>
+        <li>Resignation heard in passing still counts: enter it, then confirm the paperwork.</li>
+        <li>Upcoming leave mentioned? Point the employee into the leave process today.</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h2>Slow down and flag to PCB when…</h2>
+      <ul class="checks">
+        <li>A request touches overtime, hours, or hourly-versus-salaried status (FLSA).</li>
+        <li>Someone wants a custom title, level, or a pay rate outside the range (job architecture).</li>
+        <li>An employee will work from another state, especially New York, California, or Florida.</li>
+        <li>A termination involves a state with fast final-pay deadlines.</li>
+        <li>You are about to guess. Recognize and route; never diagnose alone.</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h2>Where to go, in order</h2>
+      <ol>
+        <li><b>Oracle first:</b> the job aid, guided journey, or HCM Academy course for the task.</li>
+        <li><b>The HCM community:</b> for judgment calls and how-do-you-handle-it questions.</li>
+        <li><b>A help desk ticket:</b> for genuine system problems and errors that will not save.</li>
+      </ol>
+      <p style="margin:6px 0 0"><b>Never:</b> the old email thread, the memory of a webinar, or a guess.</p>
+    </div>
+
+    <div class="box">
+      <h2>Every week</h2>
+      <ul class="checks">
+        <li>Run your standing sweep: unapproved timecards, pending transactions, anything aging.</li>
+        <li>Act on every reminder the first time it arrives; escalation is the avoidable step.</li>
+        <li>Check your Academy path for assigned courses and due dates.</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h2>The numbers to remember</h2>
+      <ul>
+        <li><b>$84,000</b> in documented overpayments across <b>24 cases</b> in five months (Jan to May 2026, two units), mostly from delayed or incorrect actions.</li>
+        <li><b>85%+</b> required training completion, within timeframes, tracked in Oracle.</li>
+        <li><b>3 new states</b> (NY, CA, FL), each with its own wage, hour, and leave rules.</li>
+      </ul>
+    </div>
+
+    <div class="box full">
+      <h2>The one habit</h2>
+      <p class="prompt">Same day, into Oracle. If you learned about it today, it is in Oracle today, with the true effective date. A sticky note is not a system of record, and payroll cannot pay from your inbox.</p>
+    </div>
+
+    <div class="box full">
+      <h2>Your commitment card, fill in the blanks</h2>
+      <p class="prompt">The task that slips: [name it] → My habit: [same-day entry / standing weekly sweep / Oracle first / finish my learning path] → What I will NOT do: [sit on changes / ticket before Oracle / snooze reminders] → First rep: [tomorrow / before the next cutoff / within 7 days] → Evidence, after one cycle: what did not become a fire drill.</p>
+    </div>
+  </div>
+
+  <footer>
+    <span>HCM Essentials · Vanderbilt Learning Series · <a href="https://me5231979.github.io/HCM_Education/">me5231979.github.io/HCM_Education</a></span>
+    <span>FLSA basics: <a href="https://www.dol.gov/agencies/whd/flsa">U.S. Department of Labor</a></span>
+  </footer>
+</div>
+</body>
+</html>
