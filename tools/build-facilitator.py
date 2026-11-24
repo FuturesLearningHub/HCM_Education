@@ -238,7 +238,7 @@ s = s.replace('</body>', FAC_JS + '</body>')
 
 # ---- 7. footer marker ----
 s = s.replace('HCM Essentials · A Vanderbilt learning experience',
-              'HCM Essentials · Facilitator Edition · learner link: <a href="' + LEARNER_URL + '" style="color:rgba(255,255,255,.7);text-decoration:underline">me5231979.github.io/HCM_Education</a>')
+              'HCM Essentials · Facilitator Edition · learner link: <a href="' + LEARNER_URL + '" style="color:rgba(255,255,255,.7);text-decoration:underline">futureslearninghub.github.io/HCM_Education</a>')
 
 out = os.path.join(ROOT, 'facilitator', 'index.html')
 open(out, 'w').write(s)
