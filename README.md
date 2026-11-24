@@ -11,11 +11,11 @@ scan a QR code and work every exercise on their own devices, or share the
 link for self-paced review.
 
 Part of the Vanderbilt Learning Series. Catalog:
-[Course Library](https://me5231979.github.io/Course_Library/)
+[Course Library](https://flh-learning-library.vercel.app/)
 
-- **Learner edition:** https://me5231979.github.io/HCM_Education/
-- **Self-paced edition:** https://me5231979.github.io/HCM_Education/web/
-- **Facilitator edition:** https://me5231979.github.io/HCM_Education/facilitator/
+- **Learner edition:** https://futureslearninghub.github.io/HCM_Education/
+- **Self-paced edition:** https://futureslearninghub.github.io/HCM_Education/web/
+- **Facilitator edition:** https://futureslearninghub.github.io/HCM_Education/facilitator/
 
 ## Running it
 
